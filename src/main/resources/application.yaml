@@ -1,0 +1,5 @@
+app:
+  config:
+  amazon:
+    - key: PENDIENTE
+    - secret: PENDIENTE
