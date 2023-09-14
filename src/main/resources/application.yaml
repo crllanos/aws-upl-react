@@ -1,5 +1,5 @@
 app:
   config:
   amazon:
-    - key: PENDIENTE
-    - secret: PENDIENTE
+    - key: PENDIENTE AWS Credentials
+    - secret: PENDIENTE AWS Credentials
