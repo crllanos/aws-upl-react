@@ -20,3 +20,13 @@ The following guides illustrate how to use some features concretely:
 * [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
 * [Building REST services with Spring](https://spring.io/guides/tutorials/rest/)
 
+
+
+    git config --global user.email "Cristian's email'"
+    git config --global user.name "cristian"
+
+    ssh-keygen -t ed25519 -C "Cristian's email"
+    eval "$(ssh-agent -s)"
+    ssh-add ~/.ssh/id_ed25519
+    
+    cat ~/.ssh/id_ed25519.pub
