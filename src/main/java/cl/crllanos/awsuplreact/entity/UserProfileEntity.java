@@ -14,5 +14,5 @@ import java.util.UUID;
 public class UserProfileEntity {
     private UUID profileId;
     private String username;
-    private String imageUrl;
+    private String imageUrl; //s3 key
 }
