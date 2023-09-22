@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import React, {useState, useEffect} from "react";
 import './App.css';
+import axios from "axios";
+
+const UserProfiles = () => {
+    console.log("llega aca");
+
+    const fetchUserProfiles = () => {
+        axios.get("http://localhost:8080/api/v1/user-profile")
+             .then(rsp => {
+                console.log(rsp);
+             });
+    };
+
+    useEffect(() => {
+        fetchUserProfiles();
+    }, []);
+
+    return <h1>UserProf!</h1>;
+}
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <h1>oa!!</h1>
+    <UserProfiles />
     </div>
   );
 }
