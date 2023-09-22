@@ -1,6 +1,7 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useCallback} from "react";
 //import './App.css';
 import axios from "axios";
+import {useDropzone} from "react-dropzone";
 
 const UserProfiles = () => {
 
@@ -22,11 +23,33 @@ const UserProfiles = () => {
     return userProfiles.map((userProf, idx) => {
         return (
             <div key={idx}>
+                <UnDropzone />
                 <h2>{userProf.username}</h2>
                 <h4>{userProf.profileId}</h4>
             </div>
         );
     });
+
+    function UnDropzone(){
+        const onDrop = useCallback( files => {
+            // todo handle files
+        }, []);
+
+        const {getRootProps, getInputProps, isDragActive} = useDropzone({ onDrop });
+
+        return (
+            <div { ...getRootProps() }>
+                <input  { ...getInputProps() } />
+                { isDragActive ?
+                 ( <p>- drop the file -</p> )
+                 :
+                 ( <p>= drag and drop =</p> )
+
+                 }
+            </div>
+        )
+    }
+
 };
 
 function App() {

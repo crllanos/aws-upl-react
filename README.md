@@ -27,4 +27,14 @@ The following:
     
     git config pull.rebase false
     
+    npm install -g npm@10.1.0
+    
+    npx create-react-app frontend
+    
+    npm -S i axios
+    
+    npm install --save react-dropzone
+    
+    
+    
 ```
