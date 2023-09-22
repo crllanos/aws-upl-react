@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from "react";
-import './App.css';
+//import './App.css';
 import axios from "axios";
 
 const UserProfiles = () => {
-    console.log("llega aca");
+
+    const [userProfiles, setUserProfiles] = useState([]);
 
     const fetchUserProfiles = () => {
         axios.get("http://localhost:8080/api/v1/user-profile")
              .then(rsp => {
-                console.log(rsp);
+                const data = rsp.data;
+                console.log(data);
+                setUserProfiles(data);
              });
     };
 
@@ -16,8 +19,15 @@ const UserProfiles = () => {
         fetchUserProfiles();
     }, []);
 
-    return <h1>UserProf!</h1>;
-}
+    return userProfiles.map((userProf, idx) => {
+        return (
+            <div key={idx}>
+                <h2>{userProf.username}</h2>
+                <h4>{userProf.profileId}</h4>
+            </div>
+        );
+    });
+};
 
 function App() {
   return (
