@@ -3,3 +3,8 @@ app:
   amazon:
     - key: PENDIENTE AWS Credentials
     - secret: PENDIENTE AWS Credentials
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: 50MB
