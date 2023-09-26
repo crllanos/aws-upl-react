@@ -2,7 +2,7 @@ package cl.crllanos.awsuplreact.enums;
 
 public enum BucketName {
 
-    PROFILE_IMAGE("NOMBRE BUCKET EN AWS S3");
+    PROFILE_IMAGE("aws-upl-react");
 
     private final String bucketName;
 

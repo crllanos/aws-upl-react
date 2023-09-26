@@ -64,7 +64,8 @@ public class UserProfileService {
         //        .filter(ext::equals)
         //        .collect(Collectors.toList());
         //if(extValid.size() != 1){ // kE Hordinariez
-        if(Arrays.asList(IMAGE_JPEG, IMAGE_PNG, IMAGE_GIF).contains(file.getContentType())){
+        if(!Arrays.asList(IMAGE_JPEG.getMimeType(), IMAGE_PNG.getMimeType(), IMAGE_GIF.getMimeType())
+                .contains(file.getContentType())){
             throw new IllegalArgumentException("file must be a valid image");
         }
     }

@@ -1,8 +1,8 @@
 app:
   config:
   amazon:
-    - key: PENDIENTE AWS Credentials
-    - secret: PENDIENTE AWS Credentials
+    - key: ${{ secrets.AWS_KEY }}
+    - secret: ${{ secrets.AWS_SECRET }}
 
 spring:
   servlet:

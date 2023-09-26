@@ -23,7 +23,7 @@ const UserProfiles = () => {
 
     return userProfiles.map((userProf, idx) => {
         return (
-            <div class="fisha" key={idx}>
+            <div className="fisha" key={idx}>
                 {/** todo cargar imagen profile */}
                 <h2>{userProf.username}</h2>
                 <h4>{userProf.profileId}</h4>
@@ -39,7 +39,6 @@ const UserProfiles = () => {
 
             const formData = new FormData();
             formData.append("file", file);
-
             axios.post(`${apiUserProfile}/${profileId}/image/upload`, formData,
                 {
                     headers: { "Content-type" : "multipart/form-data" }
